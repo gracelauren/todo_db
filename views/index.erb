@@ -1,16 +1,21 @@
 <h1>To Do</h1>
 
-<p>Create a new list:</p>
+<h3>Create a new list:</h3>
 
 <form action="/lists" method="post">
-  <label for='name'> Assign a name to your list:</label>
-  <input id = 'name' name = 'name' type='text' autofocus>
-
-  <button type='submit'>Add list</button>
+  <div class="form-group">
+    <label class="form-label" for='name'>Assign a name to your list:</label>
+    <input class="form-control" id = 'name' name = 'name' type='text' placeholder="List Name" autofocus>
+  </div>
+  <div class="span7 text-center">
+    <button type='submit' class="button button-add btn center">Add list</button>
+  </div>
 </form>
 
+<hr>
+
 <% if @lists.any?() %>
-  <p>Click on a list to see its tasks:</p>
+  <h3>Click on a list to see its tasks:</h3>
 
   <ul>
     <% @lists.each() do |list| %>
