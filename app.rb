@@ -35,3 +35,20 @@ post("/tasks") do
   # url = "/lists/:" + list_id.to_s()
   # redirect(url)
 end
+
+get("/delete_list/:id") do
+  list_id = params.fetch("id").to_i()
+  list = List.find(list_id)
+  list.delete()
+  redirect("/")
+end
+
+get("/delete_task/:id") do
+  task_id = params.fetch("id").to_i()
+  task = Task.find(task_id)
+  task.delete()
+
+  list_id = task.list_id()
+  @list = List.find(list_id)
+  erb(:list)
+end

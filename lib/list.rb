@@ -37,15 +37,19 @@ class List
 
  define_method(:tasks) do
    list_tasks = []
-
    tasks = DB.exec("SELECT * FROM tasks WHERE list_id = #{self.id()} ORDER BY due;")
    tasks.each() do |task|
      description = task.fetch('description')
      due = task.fetch('due')
      list_id = task.fetch('list_id').to_i()
-     list_tasks.push(Task.new({:description => description, :due => due, :list_id => list_id}))
+     id = task.fetch('id').to_i()
+     list_tasks.push(Task.new({:description => description, :due => due, :list_id => list_id, :id => id}))
    end
    list_tasks
+ end
+
+ define_method(:delete) do
+   DB.exec("DELETE FROM lists WHERE id = #{self.id()};")
  end
 
 end

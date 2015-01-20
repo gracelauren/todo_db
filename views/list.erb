@@ -23,7 +23,7 @@
 
   <ul>
     <% @list.tasks().each() do |task| %>
-      <li><%= task.description() %> - due <%= task.due() %></li>
+      <li><%= task.description() %> - due <%= task.due() %> [<a href="/delete_task/<%= task.id()%>">x</a>]</li>
     <% end %>
   </ul>
 

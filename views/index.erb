@@ -19,10 +19,12 @@
 
   <ul>
     <% @lists.each() do |list| %>
-      <li>  <a href="/lists/<%= list.id()%>"><%= list.name() %></a> </li>
+      <li><a href="/lists/<%= list.id()%>"><%= list.name() %></a> [<a href="/delete_list/<%= list.id()%>">x</a>]</li>
     <% end %>
   </ul>
 
   <% else %>
     <p>There are no lists yet!</p>
   <% end %>
+
+<hr>

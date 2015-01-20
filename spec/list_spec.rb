@@ -75,7 +75,16 @@ describe(List) do
 
   end
 
-
+  describe('#delete') do
+    it("deletes a list from database") do
+      test_list = List.new({ :name => "Foo", :id => nil })
+      test_list.save()
+      test_list2 = List.new({:name => 'la', :id => nil})
+      test_list2.save()
+      test_list.delete()
+      expect(List.all()).to(eq([test_list2]))
+    end
+  end
 
 
 
