@@ -37,7 +37,7 @@ username=# \c todo;
 ```
 
 ```
-todo=# CREATE TABLE tasks (id serial PRIMARY KEY, description varchar, due timestamp, list_id int);
+todo=# CREATE TABLE tasks (id serial PRIMARY KEY, description varchar, due date, list_id int);
 ```
 
 ```
