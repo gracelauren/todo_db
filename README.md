@@ -10,7 +10,7 @@ Installation
 
 Install Todo by first cloning the repository.  
 ```
-$ git clone http://github.com/mgoren/todo.git
+$ git clone http://github.com/gracelauren/todo_db.git
 ```
 
 Install all of the required gems:
