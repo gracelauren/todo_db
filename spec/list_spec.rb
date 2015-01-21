@@ -54,8 +54,8 @@ describe(List) do
     it("returns a list of tasks that belong to that list") do
       test_list = List.new({ :name => "Foo", :id => nil })
       test_list.save()
-      task1 = Task.new({:description => 'learn SQL', :due => '2015-01-20 00:00:00', :list_id => test_list.id()})
-      task2 = Task.new({:description => 'drink coffee', :due => '2015-01-21 00:00:00', :list_id => test_list.id()})
+      task1 = Task.new({:description => 'learn SQL', :due => '2015-01-20', :list_id => test_list.id()})
+      task2 = Task.new({:description => 'drink coffee', :due => '2015-01-21', :list_id => test_list.id()})
       task1.save()
       task2.save()
       expect(test_list.tasks()).to(eq([task1, task2]))
@@ -64,9 +64,9 @@ describe(List) do
     it("returns a list of tasks that belong to that list, sorted by due date") do
       test_list = List.new({ :name => "Foo", :id => nil })
       test_list.save()
-      task1 = Task.new({:description => 'learn SQL', :due => '2015-01-22 00:00:00', :list_id => test_list.id()})
-      task2 = Task.new({:description => 'drink coffee', :due => '2015-01-20 00:00:00', :list_id => test_list.id()})
-      task3 = Task.new({:description => 'code', :due => '2014-01-01 00:00:00', :list_id => test_list.id()})
+      task1 = Task.new({:description => 'learn SQL', :due => '2015-01-22', :list_id => test_list.id()})
+      task2 = Task.new({:description => 'drink coffee', :due => '2015-01-20', :list_id => test_list.id()})
+      task3 = Task.new({:description => 'code', :due => '2014-01-01', :list_id => test_list.id()})
       task1.save()
       task2.save()
       task3.save()
